@@ -1,0 +1,9 @@
+{
+  "name": "PalabrasProhibidas",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Tomasg-dev/PalabrasProhibidas",
+  "description": "Cada nivel tiene palabras prohibidas. Si dices una por el micro, aparece un enemigo a tu lado durante un minuto. Voz reconocida sin conexión, lista propia opcional. Versión en español (English: ForbiddenWords).",
+  "dependencies": [
+    "BepInEx-BepInExPack-5.4.2305"
+  ]
+}

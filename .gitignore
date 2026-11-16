@@ -1,0 +1,22 @@
+# Compilación
+bin/
+obj/
+dist/
+
+# Binarios de terceros (Vosk y el modelo): se descargan con scripts/obtener-terceros.sh
+terceros/
+
+# Rutas locales de cada desarrollador
+Directory.Build.props.user
+
+# Editores
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Nunca se sube código ni archivos del juego (descompilados, DLL de Managed, etc.)
+_decompilado/
+decompiled/
+Assembly-CSharp*.dll

@@ -1,0 +1,21 @@
+<Project>
+  <!--
+    Rutas del juego y de BepInEx, igual que en PlayerMonster. Para usar otras rutas, crea junto a este
+    archivo un "Directory.Build.props.user" (está en .gitignore) que defina GameDir y BepInExDir,
+    o usa las variables de entorno REPO_GAME_DIR y REPO_BEPINEX_DIR.
+  -->
+  <Import Project="$(MSBuildThisFileDirectory)Directory.Build.props.user" Condition="Exists('$(MSBuildThisFileDirectory)Directory.Build.props.user')" />
+
+  <PropertyGroup>
+    <GameDir Condition="'$(GameDir)' == '' And '$(REPO_GAME_DIR)' != ''">$(REPO_GAME_DIR)</GameDir>
+    <BepInExDir Condition="'$(BepInExDir)' == '' And '$(REPO_BEPINEX_DIR)' != ''">$(REPO_BEPINEX_DIR)</BepInExDir>
+
+    <!-- Valores por defecto: Steam en Linux y el perfil "Default" de Gale. -->
+    <GameDir Condition="'$(GameDir)' == ''">$(HOME)/.local/share/Steam/steamapps/common/REPO</GameDir>
+    <BepInExDir Condition="'$(BepInExDir)' == ''">$(HOME)/.local/share/com.kesomannen.gale/repo/profiles/Default/BepInEx</BepInExDir>
+
+    <ManagedDir>$(GameDir)/REPO_Data/Managed</ManagedDir>
+    <!-- Vosk y el modelo de voz: binarios de terceros que no se suben al repositorio. -->
+    <TercerosDir>$(MSBuildThisFileDirectory)terceros</TercerosDir>
+  </PropertyGroup>
+</Project>
